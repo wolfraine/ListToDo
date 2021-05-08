@@ -1,0 +1,21 @@
+<h1>Lista do zrobienia</h1>
+<a href="{% url 'task-create' %}">Dodaj Zadanie</a>
+<h3></h3>
+<table>
+    <tr>
+        <th>Zadanie</th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+    {% for task in tasks %}
+    <tr>
+        <td>{{task.title}}</td>
+        <td><a href="{% url 'task' task.id %}">Podgląd</a></td>
+        <td><a href="{% url 'task-update' task.id %}">Edycja</a></td>
+        <td><a href="{% url 'task-delete' task.id %}">Usuń</a></td>
+    </tr>
+    {% empty %}
+    <h3>Brak zadań</h3>
+    {% endfor %}
+</table>
