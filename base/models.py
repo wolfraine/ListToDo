@@ -7,9 +7,9 @@ from django.contrib.auth.models import User
 class Task(models.Model):
     #użytkownik, jeden użytkownik może mieć wiele zadań // relacja jeden do wielu // jeśli usuniemy użytkownika, jego zadania znikną// 
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
-    #tytuł zadania
+    #tytuł zadania //maksymalna długość 200 znaków, domyślnie puste
     title = models.CharField(max_length=200, null=True, blank=True)
-    #opis zadania
+    #opis zadania //domyślnie puste
     description = models.TextField(null=True, blank=True)
     #czy zadanie ukończone // zadnie domyślnie nie zakończone
     complete = models.BooleanField(default=False)
