@@ -1,14 +1,17 @@
 {% extends 'base/main.html' %}
 {% block content %}
 
-<h1>Login</h1>
+<div class="head-bar">
+    <h1>Witaj w ListToDo - Lista zadań !</h1>
+</div>
 
+<div class= "card-body">
 <form method="POST">
     {% csrf_token %}
     {{form.as_p}}
-    <input type='submit' value="Login">
+    <input class="button" type='submit' value="Login">
 </form>
-
 <p>Nie masz konta ?  <a href="{% url 'register' %}" >Zarejestruj się</a></p>
+</div>
 
 {% endblock content %}

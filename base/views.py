@@ -1,3 +1,5 @@
+from django.forms.forms import Form
+from django.http import request
 from django.shortcuts import render, redirect
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
@@ -36,9 +38,9 @@ class RegisterPage(FormView):
         if self.request.user.is_authenticated:
             return redirect('tasks')
         return super(RegisterPage, self).get(*args, ** kwargs)
+    
 
-
-#widok podstawowy
+#widok podstawowy ->widok listy
 class TaskList(LoginRequiredMixin, ListView):
     model = Task
     context_object_name = 'tasks'
