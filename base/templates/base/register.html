@@ -12,17 +12,15 @@
         <label>{{form.username.label}}</label>
         {{form.username}}
     
-        <label>{{form.password1.label}}</label>
+        <label>{{form.password1.label}}<span style='color:red'>*</style></label>
         {{form.password1}}
-        <label>
-            Zasady tworzenia hasła
-        </label>
-    
+  
         <label>{{form.password2.label}}</label>
         {{form.password2}}
-
+            <p></p>
         <input class="button" type='submit' value="Rejestracja">
     </form>
+    <p style='font-size: x-small'><span style='color:red'>*</span>Zasady tworzenia haseł:<br>  - hasło powinno zawierać minum 8 znaków<br>  - hasło powinno zawierać 1 dużą i 1 małą literę<br>  - hasło powinno różnić się od loginu</p>
 
 <p>Masz już konto ? <a href="{% url 'login' %}">Logowanie</a></p>
 </div>
